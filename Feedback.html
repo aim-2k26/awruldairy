@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="icon" href="AWRUL.png" type="image/png"> 
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .feedback-form {
+            max-width: 400px;
+            margin: 0 auto;
+            /* width: 100%; */
+
+        }
+
+        .feedback-input {
+            width: 90%;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        .feedback-message {
+            width: 90%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        .send-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+         .container {
+            display: flex;
+            justify-content: r;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .map-container {
+            flex: 1;
+            margin-right: 20px; /* Adjust the margin as needed */
+        }
+
+        .feedback-form {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="logo">
+            <img src="AWRUL.png" alt="Awrul Dairy Logo">
+        </div>
+        <div id="indian-time"></div>
+        <div class="language-preference">
+            <select id="language-select">
+                <option value="en">English</option>
+                <a href="homemr.html"><option value="mr">मराठी</a></option>
+            </select>
+        </div>
+        </div>
+    </div>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="About us.html" class="about-us-link">About Us</a>
+        <a href="Services.html">Services</a>
+        <!-- <a href="Login.html">Login</a> -->
+    </nav>
+    
+    <!-- <header> -->
+        <div class="welcome-section">
+            <h1>Awrul Dairy-Feedback form</h1>
+            <span>
+            <marquee direction="right "behaviour="scroll">Quality Milk and Dairy Products Delivered Fresh to Your Doorstep!</marquee>
+            </span>
+        </div>
+        <!-- <div class="container">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.030961818873!2d77.31389571490111!3d19.493793946279627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd05045b41c0d05%3A0x8231d1a74cc02e95!2sSagroli%2C%20Maharashtra%20431731!5e0!3m2!1sen!2sin!4v1650032623198!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div> -->
+            <div class="feedback-form">
+                <h2>Your feedback matters. We're here to listen and improve.</h2>
+                <form onsubmit="return validateForm()">
+                    <input class="feedback-input" type="text" id="name" placeholder="Your Name" required><br>
+                    <input class="feedback-input" type="tel" id="contact" placeholder="Contact Number" required><br>
+                    <input class="feedback-input" type="email" id="email" placeholder="Email Address" required><br>
+                    <textarea class="feedback-message" id="feedback" placeholder="Your Feedback..." required></textarea><br>
+                    <button type="submit" class="send-button">Submit</button>
+                </form>
+            </div>
+        </div>
+        
+
+    <script>
+        function validateForm() {
+    var name = document.getElementById("name").value;
+    var contact = document.getElementById("contact").value;
+    var email = document.getElementById("email").value;
+    var feedback = document.getElementById("feedback").value;
+    var sendButton = document.getElementById("sendButton");
+
+    var contactRegex = /^[0-9]{10}$/;
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (name === "" || !contact.match(contactRegex) || !email.match(emailRegex) || feedback === "") {
+        alert("Invalid input! Please check your details and try again.");
+        sendButton.disabled = true;
+        return false;
+    } else {
+        sendButton.disabled = false;
+        alert("Feedback sent successfully!");
+        return true;
+    }
+}
+</script>
+<footer>
+    <div class="footer-content">
+        <a href="Contact us.html" class="contact-box">Contact Us</a>
+        <!-- <a href="Feedback.html" class="feedback-box">Feedback</a> -->
+        <div class="social-icons">
+           <a href="https://www.instagram.com/?next=%2F" target="_main"> <img src="https://img.freepik.com/free-vector/instagram-vector-social-media-icon-7-june-2021-bangkok-thailand_53876-136728.jpg?w=2000" alt="instagram"></a>
+           <a href="https://wa.me/7620408053" target="_main"><img src="whatsapp.png" alt="WhatsApp"></a>
+
+        
+             <!-- Add more social media icons as needed  -->
+        </div>
+    </div>
+    <div class="rights-reserved">
+        <p>&copy; 2023 Awrul Dairy. All Rights Reserved.</p>
+    </div>
+    <a href="https://www.startupindia.gov.in/content/sih/en/sitemap.html">Site map</a>
+</footer>
+</body>
+
+</html>

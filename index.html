@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awrul Dairy</title>
+    <link rel="icon" href="AWRUL.png" type="image/png"> 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
+</head>
+
+<body> 
+    <div class="top-bar">
+        <div class="logo">
+            <img src="AWRUL (1).png" alt="Awrul Dairy Logo">
+        </div>
+        <div id="indian-time"></div>
+        <div class="language-preference">
+            <select id="language-select">
+                <option value="en">English</option>
+                <a href="homemr.html"><option value="mr">मराठी</a></option>
+            </select>
+            <div class="user-section">
+                <!-- User logo will be appended here after login -->
+                <button id="login-signup-btn">Login/Signup</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="About us.html" class="about-us-link">About Us</a>
+        <a href="Services.html">Services</a>
+        <a href="Login.html">Login</a>
+    </nav>
+    
+        <div class="welcome-section">
+            <h1>Welcome to Awrul Dairy</h1>
+            <span>
+            <marquee direction="right "behaviour="scroll">Quality Milk and Dairy Products Delivered Fresh to Your Doorstep!</marquee>
+            </span>
+        </div>
+        
+        <div class="slider-container">
+            <!-- <div class="carousel-container"> -->
+                <div class="slider">
+                    <img src="image1.jpg" alt="Image 1" />
+                    <img src="image2.jpg" alt="Image 2" />
+                    <img src="image3.jpg" alt="Image 3" />
+                    <img src="image4.jpg" alt="Image 4" />
+                    <!-- <img src="image5.png" alt="Image 5" /> -->
+                    <img src="image6.jpg" alt="Image 5" />
+                    <!-- <img src="image7.jpg" alt="Image 2" /> -->
+                    <img src="image8.jpg" alt="Image 6" />
+                    <img src="image9.jpg" alt="Image 7" /> 
+                    <img src="image10.jpg" alt="Image 8" />
+                    <img src="image11.jpg" alt="Image 9" />
+                    <img src="image12.jpg" alt="Image 10" />                       
+                <button class="prev-button">&lt; </button>
+                <button class="next-button"> &gt;</button>
+            </div>
+            <!-- <button tabindex="1">Click me</button> -->
+        </div>
+    <section class="benefits">
+        <h2>Users Benefits</h2>
+        <ul>
+            <p>Fresh and Pure Milk</p>
+            <p>Wide Variety of Dairy Products</p>
+            <p>Home Delivery Services</p>
+            <p>Healthy and Nutritious Options</p>
+        </ul>
+    </section>
+   <footer>
+    <div class="container">
+        <!-- <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.030961818873!2d77.31389571490111!3d19.493793946279627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd05045b41c0d05%3A0x8231d1a74cc02e95!2sSagroli%2C%20Maharashtra%20431731!5e0!3m2!1sen!2sin!4v1650032623198!5m2!1sen!2sin" width="100" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div> -->
+        <div class="contact-info">
+            <div>Visit Us: Sagroli, Pincode: 431731</div>
+            <div>Email: example@email.com | Phone: 123-456-7890</div>
+        </div>
+            <a href="Contact us.html" class="contact-box">Contact Us</a>
+            <a href="Feedback.html" class="feedback-box">Feedback</a>
+            <div class="social-icons">
+               <a href="https://www.instagram.com/?next=%2F" target="_main"> <img src="https://img.freepik.com/free-vector/instagram-vector-social-media-icon-7-june-2021-bangkok-thailand_53876-136728.jpg?w=2000" alt="instagram"></a>
+               <a href="https://wa.me/7620408053" target="_main"><img src="whatsapp.png" alt="WhatsApp"></a>
+                 <!-- Add more social media icons as needed  -->
+            </div>
+            
+        </div>
+        <div class="rights-reserved">
+            <p>&copy; 2023 Awrul Dairy. All Rights Reserved.</p>
+        </div>
+        <a href="https://www.startupindia.gov.in/content/sih/en/sitemap.html">Site map</a>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+      });
+    });
+    const prevButton = document.querySelector(".prev-button");
+        const nextButton = document.querySelector(".next-button");
+
+        prevButton.addEventListener("click", function () {
+            $('.slider').slick('slickPrev');
+        });
+
+        nextButton.addEventListener("click", function () {
+            $('.slider').slick('slickNext');
+        });
+  </script>
+</body>
+
+</html>

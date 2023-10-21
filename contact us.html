@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="icon" href="AWRUL.png" type="image/png"> 
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html{
+    scroll-behavior: smooth;
+}
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #entire-content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:center;
+
+        }
+        
+        .founders-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:center;
+            /* margin: 20px; */
+        }
+
+        .founder,
+        .co-founder {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .founder-form img,
+        .co-founder-form img {
+            width: 200px; /* Adjust image width as needed */
+            height: 300px; /* Adjust image height as needed */
+            border-radius: 10%;
+            margin-right: 20px;
+        }
+
+        .founder-form, .co-founder-form {
+            width: 100%; /* Set the width to 100% for mobile devices */
+            max-width: 400px; /* Set a maximum width for larger screens */
+            margin: 20px;
+        }
+        .founder img,
+        .co-founder img {
+            width: 100px; /* Adjust image width as needed */
+            height: 100px; /* Adjust image height as needed */
+            border-radius: 10%;
+            margin-right: 20px;
+        }
+        .form-content {
+            display: flex;
+            align-items: center;
+            width: 100%; /* Set the initial width to 100% */
+            max-width: 400px; /* Set a maximum width for larger screens */
+            margin: 0 auto;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 0;
+            padding-bottom: 75%; /* 75% aspect ratio (4:3) for the map, adjust as needed */
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+
+        /* Styles for larger screens */
+        @media (min-width: 768px) {
+            /* {
+                display: flex;;
+            } */
+            .founders-section {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            .map-container {
+                flex: 0;
+                margin-right: 20px;
+            }
+
+            .founder,
+            .co-founder {
+                /* text-align: center; */
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="AWRUL.png" alt="Awrul Dairy Logo">
+            </div>
+            <div id="indian-time"></div>
+            <div class="language-preference">
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <a href="homemr.html"><option value="mr">मराठी</a></option>
+                </select>
+               
+            </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="About us.html" class="about-us-link">About Us</a>
+            <a href="Services.html">Services</a>
+            <!-- <a href="Login.html">Login</a> -->
+        </nav>
+        
+        <!-- <header> -->
+            <div class="welcome-section">
+                <h1>Awrul Dairy-Contact us</h1>
+                <span>
+                <marquee direction="right "behaviour="scroll">Quality Milk and Dairy Products Delivered Fresh to Your Doorstep!</marquee>
+                </span>
+            </div>
+        <div id="entire-content">
+            <form class="founder-form">
+                <h2>Founder's Information</h2>
+                <div class="form-content">
+                    <img src="Rajeshwar.jpg" alt="Founder Image">
+                    <div class="form-data">
+                        <label for="founder-name">Name:</label>
+                        <input type="text" id="founder-name" name="founder-name" required><br>
+                        <label for="founder-bio">Bio:</label>
+                        <textarea id="founder-bio" name="founder-bio" required></textarea><br>
+                        <label for="founder-contact">Contact Information:</label>
+                        <input type="text" id="founder-contact" name="founder-contact" required><br>
+                    </div>
+                </div>
+            </form>
+        
+            <form class="co-founder-form">
+                <h2>Co-Founder's Information</h2>
+                <div class="form-content">
+                    <img src="cofounder.jpg" alt="Co-Founder Image">
+                    <div class="form-data">
+                        <label for="co-founder-name">Name:</label>
+                        <input type="text" id="co-founder-name" name="co-founder-name" required><br>
+                        <label for="co-founder-bio">Bio:</label>
+                        <textarea id="co-founder-bio" name="co-founder-bio" required></textarea><br>
+                        <label for="co-founder-contact">Contact Information:</label>
+                        <input type="text" id="co-founder-contact" name="co-founder-contact" required><br>
+                    </div>
+                </div>
+            </form>
+            <form class="co-founder-form">
+                <h2>Co-Founder's Information</h2>
+                <div class="form-content">
+                    <img src="cofounder.jpg" alt="Co-Founder Image">
+                    <div class="form-data">
+                        <label for="co-founder-name">Name:</label>
+                        <input type="text" id="co-founder-name" name="co-founder-name" required><br>
+                        <label for="co-founder-bio">Bio:</label>
+                        <textarea id="co-founder-bio" name="co-founder-bio" required></textarea><br>
+                        <label for="co-founder-contact">Contact Information:</label>
+                        <input type="text" id="co-founder-contact" name="co-founder-contact" required><br>
+                    </div>
+                </div>
+            </form>
+            <div class="map-container">
+                <h1>This is our location</h1>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.030961818873!2d77.31389571490111!3d19.493793946279627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd05045b41c0d05%3A0x8231d1a74cc02e95!2sSagroli%2C%20Maharashtra%20431731!5e0!3m2!1sen!2sin!4v1650032623198!5m2!1sen!2sin" width="200" height="50" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>       
+<footer>
+    <div class="footer-content">
+        <!-- <a href="Contact us.html" class="contact-box">Contact Us</a> -->
+        <a href="Feedback.html" class="feedback-box">Feedback</a>
+        <div class="social-icons">
+           <a href="https://www.instagram.com/?next=%2F" target="_main"> <img src="https://img.freepik.com/free-vector/instagram-vector-social-media-icon-7-june-2021-bangkok-thailand_53876-136728.jpg?w=2000" alt="instagram"></a>
+           <a href="https://wa.me/7620408053" target="_main"><img src="whatsapp.png" alt="WhatsApp"></a>
+
+        
+             <!-- Add more social media icons as needed  -->
+        </div>
+    </div>
+    <div class="rights-reserved">
+        <p>&copy; 2023 Awrul Dairy. All Rights Reserved.</p>
+    </div>
+    <a href="https://www.startupindia.gov.in/content/sih/en/sitemap.html">Site map</a>
+</footer></body>
+
+</html>

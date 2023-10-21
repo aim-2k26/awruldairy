@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="icon" href="AWRUL.png" type="image/png"> 
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        /* Show the tooltip text when you hover over the tooltip container */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Style for the info icon */
+        .info-icon {
+            margin-left: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+    </style>
+     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const infoIcon = document.getElementById('info-icon');
+            const tooltip = document.getElementById('tooltip');
+
+            infoIcon.addEventListener('click', () => {
+                tooltip.style.visibility = tooltip.style.visibility === 'visible' ? 'hidden' : 'visible';
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Awrul Dairy-Registration Form</h2>
+        <form id="registration-form">
+            <input type="text" id="name" placeholder="Name" required><br>
+            <input type="tel" id="phone" placeholder="Phone Number (e.g., 1234567890)" pattern="[0-9]{10}" required><br>
+            <input type="email" id="email" placeholder="Email" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required><br>
+            <label for="security-question">Security Question:</label><br>
+            <input type="text" id="security-question" placeholder="Security Question" required><br>
+            <label for="securityAnswer">Security Answer
+                <span class="tooltip">
+                    <i class="fa fa-info-circle"></i>
+                    <span class="tooltiptext">Remember your security answer for future reference.</span>
+                </span>
+            </label>            
+            <input type="text" id="security-answer" placeholder="Answer" required><br>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const securityQuestion = document.getElementById('security-question').value;
+            const securityAnswer = document.getElementById('security-answer').value;
+
+            // Password validation: at least 1 uppercase, 1 lowercase, 1 number, 1 special character, and 8 or more characters
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{8,}$/;
+            
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+            } else if (!password.match(passwordRegex)) {
+                alert("Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character, and be 8 or more characters long.");
+            } else {
+                // Registration logic here (send data to server or store in database)
+                alert("Registration successful!");
+            }
+        });
+    </script>
+</body>
+
+</html>

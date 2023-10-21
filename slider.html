@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Image Carousel</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            margin: 0;
+            padding: 0;
+           
+        }
+        .carousel-container {
+            width: 100%;
+            /* height:400px; */
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            object-fit: center;
+            aspect-ratio: 211 / 35;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            object-fit: cover;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+        }
+
+        .slide img {
+            width: 100%;
+        }
+
+        .prev-button,
+        .next-button {
+            position: absolute;
+            top: 50%;
+            /* transform: translateY(-50%); */
+            /* background-color: #007bff; */
+            color: rgb(22, 21, 21);
+            border: none;
+            /* padding: 10px 20px; */
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .prev-button {
+            left: 10px;
+        }
+
+        .next-button {
+            right: 10px;
+        }
+        @media screen and (max-width: 768px) {
+            .prev-button,
+            .next-button {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .prev-button,
+            .next-button {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel-container">
+        <div class="slider">
+            <div class="slide" ><img src="image1.jpg" alt="Image 1" ></div >
+            <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
+            <div class="slide"><img src="image4.jpg" alt="Image 4"></div>
+            <div class="slide"><img src="image5.png" alt="Image 5"></div>
+            <div class="slide"><img src="image6.jpg" alt="Image 6"></div>
+            <div class="slide"><img src="image7.jpg" alt="Image 7"></div>
+            <div class="slide"><img src="image8.jpg" alt="Image 8"></div>
+            <div class="slide"><img src="image9.jpg" alt="Image 9"></div>
+            <div class="slide"><img src="image10.jpg" alt="Image 10"></div>
+            <div class="slide"><img src="image11.jpg" alt="Image 11"></div>
+            <div class="slide"><img src="image12.jpg" alt="Image 12"></div>
+        </div>
+        <button class="prev-button">&lt; </button>
+        <button class="next-button"> &gt;</button>
+    </div>
+
+    <script>
+        // JavaScript code for sliding functionality
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const prevButton = document.querySelector('.prev-button');
+        const nextButton = document.querySelector('.next-button');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slider.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        nextButton.addEventListener('click', nextSlide);
+        prevButton.addEventListener('click', prevSlide);
+        setInterval(nextSlide, 5000);
+
+    </script>
+</body>
+
+</html>

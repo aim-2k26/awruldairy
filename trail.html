@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dairy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .top-bar {
+            background-color: #333;
+            color: white;
+            text-align: right;
+            padding: 10px;
+        }
+
+        .language-preference {
+            display: inline-block;
+        }
+
+        #language-select {
+            margin-right: 20px;
+        }
+
+        .user-section {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .slider-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .slider {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .prev-button,
+        .next-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .prev-button {
+            left: 10px;
+        }
+
+        .next-button {
+            right: 10px;
+        }
+
+        .benefits {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .benefits h2 {
+            color: #c13535;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .benefits ul {
+            list-style: none;
+        }
+
+        .benefits ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .slider img {
+                height: 300px;
+            }
+
+            .prev-button,
+            .next-button {
+                font-size: 20px;
+                padding: 8px 12px;
+            }
+
+            .social-icons img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider img {
+                height: 200px;
+            }
+
+            .prev-button,
+            .next-button {
+                font-size: 18px;
+                padding: 6px 10px;
+            }
+
+            .social-icons img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="language-preference">
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="mr">मराठी</option>
+            </select>
+        </div>
+        <div class="user-section">
+            <button id="login-signup-btn">Login/Signup</button>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="Home.html">Home</a>
+        <a href="About us.html" class="about-us-link">About Us</a>
+        <a href="Services.html">Services</a>
+        <a href="Login.html">Login</a>
+    </nav>
+
+    <div class="slider-container">
+        <div class="slider">
+            <img src="image1.jpg" alt="Image 1" />
+            <img src="image2.jpg" alt="Image 2" />
+            <img src="image3.jpg" alt="Image 3" />
+            <img src="image4.jpg" alt="Image 4" />
+            <img src="image6.jpg" alt="Image 5" />
+        </div>
+        <button class="prev-button">&lt;</button>
+        <button class="next-button">&gt;</button>
+    </div>
+
+    <section class="benefits">
+        <h2>Users Benefits</h2>
+        <ul>
+            <li>Fresh and Pure Milk</li>
+            <li>Wide Variety of Dairy Products</li>
+            <li>Home Delivery Services</li>
+            <li>Healthy and Nutritious Options</li>
+        </ul>
+    </section>
+
+    <div class="footer">
+        <div class="social-icons">
+            <img src="instagram-icon.png" alt="Instagram">
+            <img src="facebook-icon.png" alt="Facebook">
+            <!-- Add more social media icons as needed -->
+        </div>
+        <div>&copy; 2023 Awrul Dairy. All Rights Reserved.</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                adaptiveHeight: true,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+        });
+
+        const prevButton = document.querySelector(".prev-button");
+        const nextButton = document.querySelector(".next-button");
+
+        prevButton.addEventListener("click", function () {
+            $('.slider').slick('slickPrev');
+        });
+
+        nextButton.addEventListener("click", function () {
+            $('.slider').slick('slickNext');
+        });
+    </script>
+</body>
+
+</html>
